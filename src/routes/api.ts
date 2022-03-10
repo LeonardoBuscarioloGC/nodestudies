@@ -3,18 +3,12 @@ import * as ApiController from '../controllers/apiController';
 
 const router = Router();
 
-router.get('/ping', ApiController.ping);
 
-router.get('/randon', ApiController.randon)
+router.get('/todo/:id', ApiController.specificTask)
+router.get('/todo', ApiController.todo);
+router.post('/todo', ApiController.addTask);
+router.put('/todo', ApiController.changeTaks);
+router.delete('/todo/:id', ApiController.deleteTask);
 
-router.get('/name/:nomeRecebido', ApiController.name)
-
-router.post('/frases', ApiController.createPhrases);
-router.get('/frases', ApiController.getPhrases);
-router.get('/frase', ApiController.getSpecificPhrase);
-router.put('/fraseAlterada', ApiController.changePhrase);
-router.delete('/fraseDeletada/:id', ApiController.deletePhrase);
-
-router.get('/frase/aleatoria', ApiController.randomPhrase);
 
 export default router;
